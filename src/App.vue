@@ -2,23 +2,31 @@
 import { computed } from 'vue';
 
 let showOnDisplay = "";
+
+const textDisplay = computed(() => {
+  return showOnDisplay !== "" ? "Psatata" : 0
+})
+
 function addDisplay(element) {
   showOnDisplay += element
-}
-const textDisplay = computed(() => {
   return showOnDisplay
 }
-)
+
 </script>
 
 <template>
  <main>
-  <p id="display">{{textDisplay}}</p> 
+  <p id="display">{{ textDisplay }}</p> 
   <button id="oneKey" @click="addDisplay(1)">1</button>
  </main>
 </template>
 
 <style scoped>
+
+p {
+  color: white;
+  font-size: 32px;
+}
 button {
   display: inline-block;
   width: 50px;
