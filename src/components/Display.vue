@@ -10,8 +10,15 @@ const showDisplay = computed({
 
 let textOnDisplay = ref("");
 let showOnDisplay = ref(0);
+let simbols = ["+", "-", "/", "*"];
 
 const addToDisplay = function (element) {
+    if (element == textOnDisplay.value.charAt(textOnDisplay.value.length - 1)){
+        return
+    }
+   if (simbols.includes(element) && simbols.includes(textOnDisplay.value.charAt(textOnDisplay.value.length - 1))){
+   console.log(element);
+   }
     if (element == "c") {
         showOnDisplay.value = 0;
         textOnDisplay.value = "";
@@ -25,10 +32,6 @@ const addToDisplay = function (element) {
 
     textOnDisplay.value += element;
     showOnDisplay.value = textOnDisplay.value;
-}
-
-function addDisplay(data){
-		textOnDisplay.value=data
 }
 
 </script>
