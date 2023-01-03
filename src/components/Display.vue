@@ -1,6 +1,7 @@
 <script setup>
 import { ref, computed } from 'vue';
-import ButtonsOperationsBasics from '../ButtonsOperationsBasics.vue';
+import ButtonsOperationsBasics from './ButtonsOperationsBasics.vue';
+import ButtonsCurrencyCOnversionVue from "./ButtonsCurrencyConversion.vue"
 
 const showDisplay = computed({
     get() {
@@ -11,23 +12,38 @@ const showDisplay = computed({
 let textOnDisplay = ref("");
 let showOnDisplay = ref(0);
 let simbols = ["+", "-", "/", "*"];
+let currencies = ["Euro", "Dolar", "Yen", "Lempira"];
+let convertCurrencies = false;
 
 const addToDisplay = function (element) {
-    if (element == textOnDisplay.value.charAt(textOnDisplay.value.length - 1)){
+
+    if(currencies.includes(element)) {
+        if(!convertCurrencies) {
+            convertCurrencies = !convertCurrencies;
+            showOnDisplay.value = 0;
+            textOnDisplay.value = "";
+        }
+    }
+
+    if (simbols.includes(element) && element == textOnDisplay.value.charAt(textOnDisplay.value.length - 1)) {
         return
     }
-   if (simbols.includes(element) && simbols.includes(textOnDisplay.value.charAt(textOnDisplay.value.length - 1))){
-   console.log(element);
-   }
+    
     if (element == "c") {
         showOnDisplay.value = 0;
         textOnDisplay.value = "";
         return
     }
+
     if (element == "=") {
         showOnDisplay.value = eval(showOnDisplay.value);
+        showOnDisplay.value = showOnDisplay.value.toString()
         textOnDisplay.value = showOnDisplay.value;
         return
+    }
+    
+    if (simbols.includes(element) && simbols.includes(textOnDisplay.value.charAt(textOnDisplay.value.length - 1))) {
+        textOnDisplay.value = textOnDisplay.value.substring(0, textOnDisplay.value.length - 1);
     }
 
     textOnDisplay.value += element;
@@ -42,6 +58,7 @@ const addToDisplay = function (element) {
     </header>
     <main>
         <ButtonsOperationsBasics @add-to-display="addToDisplay" />
+        <ButtonsCurrencyCOnversionVue  @add-to-display="addToDisplay" />
     </main>
 </template>
 
