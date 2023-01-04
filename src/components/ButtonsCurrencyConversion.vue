@@ -1,8 +1,10 @@
 <script setup>
+defineEmits(['inFocus', 'addToDisplay'])
 </script>
 
 <template>
     <button id="euroCurrency" @click="$emit('addToDisplay', 'Euro')">Euro</button>
+    <button id="euroCurrency" @click="$emit('addToDisplay', 'Dolar')">Dolar</button>
 </template>
 
 <style scoped>
