@@ -5,6 +5,8 @@ defineEmits(['inFocus', 'addToDisplay'])
 <template>
     <button id="euroCurrency" @click="$emit('addToDisplay', 'Euro')">Euro</button>
     <button id="euroCurrency" @click="$emit('addToDisplay', 'Dolar')">Dolar</button>
+    <button id="euroCurrency" @click="$emit('addToDisplay', 'Yen')">Yen</button>
+    <button id="euroCurrency" @click="$emit('addToDisplay', 'Lempira')">L.H.</button>
 </template>
 
 <style scoped>

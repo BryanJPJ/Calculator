@@ -32,14 +32,18 @@ const addToDisplay = function (element) {
         showOnDisplay.value = 0;
         textOnDisplay.value = "";
       } else {
-        let currentCurrencies = textOnDisplay.value.replace(/[0-9]+/g, "");
-        let currentAmount = textOnDisplay.value.replace(/[^0-9]+/g, "");
+        let currentCurrencies = textOnDisplay.value.replace(/[0-9.]+/g, "");
+        let currentAmount = textOnDisplay.value.replace(/[^0-9.]+/g, "");
         let destinyCurrencies = element;
         const mapCurrencies = currencyValue.map(el => el.coin)
         const indexOriginCurrencies = mapCurrencies.indexOf(currentCurrencies)
         const indexDestinyCurrencies = mapCurrencies.indexOf(destinyCurrencies)
         let valueChange = currentAmount*currencyValue[indexDestinyCurrencies].value/currencyValue[indexOriginCurrencies].value;
-        console.log(valueChange);
+        showOnDisplay.value = destinyCurrencies + valueChange;
+        showOnDisplay.value = showOnDisplay.value.toString();
+        textOnDisplay.value = showOnDisplay.value;
+        convertCurrencies = !convertCurrencies;
+        return
       }
     }
   }
@@ -90,8 +94,5 @@ const addToDisplay = function (element) {
 </template>
 
 <style scoped>
-p {
-  color: white;
-  font-size: 32px;
-}
+
 </style>

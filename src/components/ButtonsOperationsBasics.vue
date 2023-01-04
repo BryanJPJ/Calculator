@@ -33,6 +33,7 @@ defineEmits(['inFocus', 'addToDisplay'])
     <button id="heightKey" @click="$emit('addToDisplay', 8)">8</button>
     <button id="nineKey" @click="$emit('addToDisplay', 9)">9</button>
     <button id="zeroKey" @click="$emit('addToDisplay', 0)">0</button>
+    <button id="dotKey" @click="$emit('addToDisplay', '.')">.</button>
     <button id="additionKey" @click="$emit('addToDisplay', '+')">+</button>
     <button id="subtractionKey" @click="$emit('addToDisplay', '-')">-</button>
     <button id="multiplicationKey" @click="$emit('addToDisplay','*')">*</button>

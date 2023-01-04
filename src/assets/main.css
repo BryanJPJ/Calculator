@@ -1,35 +1,47 @@
-@import './base.css';
-
-#app {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-
-  font-weight: normal;
+body {
+  background-color: #222222;
+  width: 360px;
+  box-sizing: border-box;
+  padding: 20px;
+  margin: auto;
 }
-
-a,
-.green {
-  text-decoration: none;
-  color: hsla(160, 100%, 37%, 1);
-  transition: 0.4s;
+p {
+  text-align: right;
+  color: rgb(87, 221, 87);
+  font-size: 32px;
+  width: 290px;
+  height: 75px;
+  margin: auto;
+  line-height: 75px;
 }
-
-@media (hover: hover) {
-  a:hover {
-    background-color: hsla(160, 100%, 37%, 0.2);
-  }
+main {
+  display: grid;
+  width: 100%;
+  /* grid-template: repeat(5, 1fr), repeat(5, 1fr); */
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
 }
-
-@media (min-width: 1024px) {
-  body {
-    display: flex;
-    place-items: center;
-  }
-
-  #app {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    padding: 0 2rem;
-  }
+#oneKey {
+grid-column: 1 / 2;
+grid-row: 5 / 6;
+}
+#dotKey {
+  grid-column: 2 / 3;
+  grid-row: 5 / 6;
+}
+#twoKey {
+  grid-column: 1 / 2;
+  grid-row: 4 / 5;
+}
+#threeKey {
+  grid-column: 2 / 3;
+  grid-row: 4 / 5;
+}
+#fourKey {
+  grid-column: 3 / 4;
+  grid-row: 4 / 5;
+}
+#fiveKey {
+  grid-column: 1 / 2;
+  grid-row: 3 / 4;
 }
