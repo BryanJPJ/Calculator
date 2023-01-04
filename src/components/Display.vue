@@ -13,6 +13,12 @@ let textOnDisplay = ref("");
 let showOnDisplay = ref(0);
 let simbols = ["+", "-", "/", "*"];
 let currencies = ["Euro", "Dolar", "Yen", "Lempira"];
+let currencyValue = [
+    {coin: "Euro", value: 1},
+    {coin: "Dolar", value: 1.06},
+    {coin: "Yen", value: 140.19},
+    {coin: "Lempira", value: 26.19}
+]
 let convertCurrencies = false;
 
 const addToDisplay = function (element) {
@@ -29,9 +35,11 @@ const addToDisplay = function (element) {
         let currentCurrencies = textOnDisplay.value.replace(/[0-9]+/g, "");
         let currentAmount = textOnDisplay.value.replace(/[^0-9]+/g, "");
         let destinyCurrencies = element;
-        console.log(currentCurrencies);
-        console.log(currentAmount);
-        console.log(destinyCurrencies);
+        const mapCurrencies = currencyValue.map(el => el.coin)
+        const indexOriginCurrencies = mapCurrencies.indexOf(currentCurrencies)
+        const indexDestinyCurrencies = mapCurrencies.indexOf(destinyCurrencies)
+        let valueChange = currentAmount*currencyValue[indexDestinyCurrencies].value/currencyValue[indexOriginCurrencies].value;
+        console.log(valueChange);
       }
     }
   }
