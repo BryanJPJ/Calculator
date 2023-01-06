@@ -14,11 +14,11 @@ let showOnDisplay = ref(0);
 let simbols = ["+", "-", "/", "*"];
 let currencies = ["Euro", "Dolar", "Yen", "Lempira"];
 let currencyValue = [
-    {coin: "Euro", value: 1},
-    {coin: "Dolar", value: 1.06},
-    {coin: "Yen", value: 140.19},
-    {coin: "Lempira", value: 26.19}
-]
+  { coin: "Euro", value: 1 },
+  { coin: "Dolar", value: 1.06 },
+  { coin: "Yen", value: 140.19 },
+  { coin: "Lempira", value: 26.19 },
+];
 let convertCurrencies = false;
 
 const addToDisplay = function (element) {
@@ -35,15 +35,17 @@ const addToDisplay = function (element) {
         let currentCurrencies = textOnDisplay.value.replace(/[0-9.]+/g, "");
         let currentAmount = textOnDisplay.value.replace(/[^0-9.]+/g, "");
         let destinyCurrencies = element;
-        const mapCurrencies = currencyValue.map(el => el.coin)
-        const indexOriginCurrencies = mapCurrencies.indexOf(currentCurrencies)
-        const indexDestinyCurrencies = mapCurrencies.indexOf(destinyCurrencies)
-        let valueChange = currentAmount*currencyValue[indexDestinyCurrencies].value/currencyValue[indexOriginCurrencies].value;
+        const mapCurrencies = currencyValue.map((el) => el.coin);
+        const indexOriginCurrencies = mapCurrencies.indexOf(currentCurrencies);
+        const indexDestinyCurrencies = mapCurrencies.indexOf(destinyCurrencies);
+        let valueChange =
+          (currentAmount * currencyValue[indexDestinyCurrencies].value) /
+          currencyValue[indexOriginCurrencies].value;
         showOnDisplay.value = destinyCurrencies + valueChange;
         showOnDisplay.value = showOnDisplay.value.toString();
         textOnDisplay.value = showOnDisplay.value;
         convertCurrencies = !convertCurrencies;
-        return
+        return;
       }
     }
   }
@@ -55,7 +57,7 @@ const addToDisplay = function (element) {
     return;
   }
 
-  if (element == "c") {
+  if (element == "ce") {
     showOnDisplay.value = 0;
     textOnDisplay.value = "";
     return;
@@ -93,6 +95,4 @@ const addToDisplay = function (element) {
   </main>
 </template>
 
-<style scoped>
-
-</style>
+<style scoped></style>

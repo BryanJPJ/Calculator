@@ -1,0 +1,157 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron&display=swap');
+
+body {
+  background-color: #222222;
+  width: 360px;
+  box-sizing: border-box;
+  padding: 20px;
+  margin: auto;
+}
+
+p {
+  font-family: 'Orbitron', sans-serif;
+  text-align: right;
+  color: rgb(87, 221, 87);
+  font-size: 32px;
+  box-sizing: border-box;
+  width: 100%;
+  height: 75px;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #fff;
+  border-radius: 5px;
+  margin-bottom: 40px;
+  overflow: hidden;
+}
+
+main {
+  display: grid;
+  gap: 10px;
+  width: 100%;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+}
+
+button {
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  border-radius: 5px;
+  border: 1px solid black;
+}
+
+#dotKey {
+  grid-column: 2 / 3;
+  grid-row: 5 / 6;
+}
+
+#zeroKey {
+  grid-column: 1 / 2;
+  grid-row: 5 / 6;
+}
+
+#oneKey {
+  grid-column: 1 / 2;
+  grid-row: 4 / 5;
+}
+
+#twoKey {
+  grid-column: 2 / 3;
+  grid-row: 4 / 5;
+}
+
+#threeKey {
+  grid-column: 3 / 4;
+  grid-row: 4 / 5;
+}
+
+#fourKey {
+  grid-column: 1 / 2;
+  grid-row: 3 / 4;
+}
+
+#fiveKey {
+  grid-column: 2 / 3;
+  grid-row: 3 / 4;
+}
+
+#sixKey {
+  grid-column: 3 / 4;
+  grid-row: 3 / 4;
+}
+
+#sevenKey {
+  grid-column: 1 / 2;
+  grid-row: 2 / 3;
+}
+
+#eightKey {
+  grid-column: 2 / 3;
+  grid-row: 2 / 3;
+}
+
+#nineKey {
+  grid-column: 3 / 4;
+  grid-row: 2 / 3;
+}
+
+#equalKey {
+  grid-column: 3 / 4;
+  grid-row: 5 / 6;
+  background: rgb(255, 128, 2);
+}
+
+#divisionKey {
+  grid-column: 4 / 5;
+  grid-row: 1 / 2;
+  background: #ffcc00;
+}
+
+#multiplicationKey {
+  grid-column: 4 / 5;
+  grid-row: 2 / 3;
+  background: #ffcc00;
+}
+
+#subtractionKey {
+  grid-column: 4 / 5;
+  grid-row: 3 / 4;
+  background: #ffcc00;
+}
+
+#additionKey {
+  grid-column: 4 / 5;
+  grid-row: 4 / 6;
+  height: 100%;
+  background: #ffcc00;
+}
+
+#resetKey {
+  grid-column: 5 / 6;
+  grid-row: 5 / 6;
+  background: #ff0000;
+}
+
+#euroKey {
+  grid-column: 5 / 6;
+  grid-row: 1 / 2;
+  background: #ffff99;
+}
+
+#dolarKey {
+  grid-column: 5 / 6;
+  grid-row: 2 / 3;
+  background: #ffff99;
+}
+
+#yenKey {
+  grid-column: 5 / 6;
+  grid-row: 3 / 4;
+  background: #ffff99;
+}
+
+#lempiraKey {
+  grid-column: 5 / 6;
+  grid-row: 4 / 5;
+  background: #ffff99;
+}
